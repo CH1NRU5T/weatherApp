@@ -96,9 +96,6 @@ class _LocationScreenState extends State<LocationScreen> {
                           size: 30,
                         ),
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
                       Expanded(
                         child: Text(
                           cityName ?? 'cityName',
@@ -112,7 +109,6 @@ class _LocationScreenState extends State<LocationScreen> {
                     ],
                   ),
                 ), // top row
-                SizedBox(height: 20),
                 MainContainer(
                     windSpeed: windSpeed,
                     humidity: humidity,
@@ -154,18 +150,16 @@ class WindAndHumidity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
+        Expanded(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 FontAwesomeIcons.wind,
                 color: Colors.black54,
                 size: 20,
-              ),
-              SizedBox(
-                width: 5,
               ),
               Text(
                 '${windSpeed} km/hr',
@@ -174,19 +168,14 @@ class WindAndHumidity extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
-          width: 40,
-        ),
-        Container(
+        Expanded(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 FontAwesomeIcons.droplet,
                 color: Colors.black54,
                 size: 20,
-              ),
-              SizedBox(
-                width: 5,
               ),
               Text(
                 '$humidity%',
@@ -223,10 +212,8 @@ class MainContainer extends StatelessWidget {
       child: Container(
         // decoration: BoxDecoration(color: Colors.red[200]),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(
-              height: 30,
-            ),
             //1) how is weather icon
             Container(
               decoration: BoxDecoration(boxShadow: [
@@ -245,9 +232,6 @@ class MainContainer extends StatelessWidget {
               ),
             ),
             // 2) how is weather desc
-            SizedBox(
-              height: 30,
-            ),
             Text(
               '$weatherDescription',
               style: TextStyle(
@@ -255,9 +239,6 @@ class MainContainer extends StatelessWidget {
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
-            ),
-            SizedBox(
-              height: 20,
             ),
             // 3) temp
             Text(
@@ -268,9 +249,6 @@ class MainContainer extends StatelessWidget {
                 color: Color(0xff2B2F60),
                 fontWeight: FontWeight.bold,
               ),
-            ),
-            SizedBox(
-              height: 20,
             ),
             // 4) row
             WindAndHumidity(
