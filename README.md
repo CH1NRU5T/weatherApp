@@ -11,4 +11,4 @@
 
 - Design credits to [Natalia Berdnyk for Uptech](https://dribbble.com/shots/14784828-Weather-forecast-interface)
 
-[APK](./build/app/outputs/flutter-apk/app-release.apk)
+[APK](./app-release.apk)
